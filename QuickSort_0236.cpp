@@ -55,9 +55,17 @@ void q_short(int low, int high)
     while (i <= j) // step 10
     {
         // search for an element greater than pivat
-        while ((arr[i] <= pivat) && (j >= high)) // step 5
+        while ((arr[i] <= pivat) && (j <= high)) // step 5
         {
             i++; // step 6
+            cmp_count++;
+        }
+        cmp_count++;
+
+        // search for an element less than or equal to pivat
+        while ((arr[j] > pivat) && (j >= high)) // step 7
+        {
+            j--; // step 8
             cmp_count++;
         }
         cmp_count++;
